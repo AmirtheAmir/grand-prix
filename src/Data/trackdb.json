@@ -1,0 +1,114 @@
+{
+    "trackData": [
+        {
+            "track_name": "Albert Park Circuit",
+            "country": "Australia",
+            "svg_path": "/src/assets/Tracks/Australia.svg"
+        },
+        {
+            "track_name": "Red Bull Ring",
+            "country": "Austria",
+            "svg_path": "/src/assets/Tracks/Austria.svg"
+          },
+          {
+            "track_name": "Baku City Circuit",
+            "country": "Azerbaijan",
+            "svg_path": "/src/assets/Tracks/Azerbaijan.svg"
+          },
+          {
+            "track_name": "Bahrain International Circuit",
+            "country": "Bahrain",
+            "svg_path": "/src/assets/Tracks/Bahrain.svg"
+          },
+          {
+            "track_name": "Circuit de Spa-Francorchamps",
+            "country": "Belgium",
+            "svg_path": "/src/assets/Tracks/Belgium.svg"
+          },
+          {
+            "track_name": "Autódromo José Carlos Pace",
+            "country": "Brazil",
+            "svg_path": "/src/assets/Tracks/Brazil.svg"
+          },
+          {
+            "track_name": "Circuit Gilles-Villeneuve",
+            "country": "Canada",
+            "svg_path": "/src/assets/Tracks/Canada.svg"
+          },
+          {
+            "track_name": "Shanghai International Circuit",
+            "country": "China",
+            "svg_path": "/src/assets/Tracks/China.svg"
+          },
+          {
+            "track_name": "Circuit Zandvoort",
+            "country": "Netherlands",
+            "svg_path": "/src/assets/Tracks/Netherlands.svg"
+          },
+          {
+            "track_name": "Silverstone Circuit",
+            "country": "Great Britain",
+            "svg_path": "/src/assets/Tracks/Great Britain.svg"
+          },
+          {
+            "track_name": "Hungaroring",
+            "country": "Hungary",
+            "svg_path": "/src/assets/Tracks/Hungary.svg"
+          },
+          {
+            "track_name": "Autodromo Nazionale Monza",
+            "country": "Italy",
+            "svg_path": "/src/assets/Tracks/Italy.svg"
+          },
+          {
+            "track_name": "Suzuka International Racing Course",
+            "country": "Japan",
+            "svg_path": "/src/assets/Tracks/Japan.svg"
+          },
+          {
+            "track_name": "The Las Vegas Strip Circuit",
+            "country": "Las Vegas",
+            "svg_path": "/src/assets/Tracks/Las Vegas.svg"
+          },
+          {
+            "track_name": "Autodromo Hermanos Rodríguez",
+            "country": "Mexico",
+            "svg_path": "/src/assets/Tracks/Mexico.svg"
+          },
+          {
+            "track_name": "Miami International Autodrome",
+            "country": "Miami",
+            "svg_path": "/src/assets/Tracks/Miami.svg"
+          },
+          {
+            "track_name": "Circuit de Monaco",
+            "country": "Monaco",
+            "svg_path": "/src/assets/Tracks/Monaco.svg"
+          },
+          {
+            "track_name": "Lusail International Circuit",
+            "country": "Qatar",
+            "svg_path": "/src/assets/Tracks/Qatar.svg"
+          },
+          {
+            "track_name": "Jeddah Corniche Circuit",
+            "country": "Saudi Arabia",
+            "svg_path": "/src/assets/Tracks/Saudi Arabia.svg"
+          },
+          {
+            "track_name": "Marina Bay Street Circuit",
+            "country": "Singapore",
+            "svg_path": "/src/assets/Tracks/Singapore.svg"
+          },
+          {
+            "track_name": "Circuit de Barcelona",
+            "country": "Spain",
+            "svg_path": "/src/assets/Tracks/Spain.svg"
+          },
+          {
+            "track_name": "Circuit of The Americas",
+            "country": "United States",
+            "svg_path": "/src/assets/Tracks/United States.svg"
+          }
+    ]
+}

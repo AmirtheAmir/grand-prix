@@ -1,0 +1,30 @@
+@import "tailwindcss";
+@font-face {
+  font-family: "FerroRosso";
+  src: url("/src/assets/Fonts/FerroRosso.ttf") format("truetype");
+}
+@font-face {
+    font-family: "bold";
+    src: url("/src/assets/Fonts/Formula1-Bold.otf") format("opentype");
+  }
+  
+  @font-face {
+    font-family: "reg";
+    src: url("/src/assets/Fonts/Formula1-Regular.otf") format("opentype");
+  }
+  
+  @font-face {
+    font-family: "wide";
+    src: url("/src/assets/Fonts/Formula1-Wide.otf") format("opentype");
+  }
+@theme {
+  --color-cream: #e5e5e5;
+  --color-text: #252525;
+  --color-crimson: #e51600;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Prevents horizontal scroll */
+}

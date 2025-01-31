@@ -1,0 +1,24 @@
+{
+    "teams": [
+      { "number": 1, "color": "#01F7FF", "name": "Mercedes", "shortName": "HAM" },
+      { "number": 7, "color": "#E87C00", "name": "McLaren", "shortName": "PIA" },
+      { "number": 12, "color": "#794CFF", "name": "RB", "shortName": "TSU" },
+      { "number": 9, "color": "#64C4FF", "name": "Alpine", "shortName": "GAS" },
+      { "number": 3, "color": "#006EFF", "name": "Red Bull Racing", "shortName": "VER" },
+      { "number": 2, "color": "#01F7FF", "name": "Mercedes", "shortName": "RUS" },
+      { "number": 6, "color": "#E8002D", "name": "Ferrari", "shortName": "SAI" },
+      { "number": 8, "color": "#E87C00", "name": "McLaren", "shortName": "NOR" },
+      { "number": 4, "color": "#006EFF", "name": "Red Bull Racing", "shortName": "PER" },
+      { "number": 10, "color": "#64C4FF", "name": "Alpine", "shortName": "OCO" },
+      { "number": 18, "color": "#229971", "name": "Kick Sauber", "shortName": "ZHO" },
+      { "number": 15, "color": "#52E252", "name": "Aston Martin", "shortName": "STR" },
+      { "number": 5, "color": "#E8002D", "name": "Ferrari", "shortName": "LEC" },
+      { "number": 14, "color": "#B6BABD", "name": "Williams", "shortName": "ALB" },
+      { "number": 11, "color": "#794CFF", "name": "RB", "shortName": "LAW" },
+      { "number": 16, "color": "#52E252", "name": "Aston Martin", "shortName": "ALO" },
+      { "number": 19, "color": "#FF87BC", "name": "Haas", "shortName": "MAG" },
+      { "number": 13, "color": "#B6BABD", "name": "Williams", "shortName": "COL" },
+      { "number": 17, "color": "#229971", "name": "Kick Sauber", "shortName": "BOT" },
+      { "number": 20, "color": "#FF87BC", "name": "Haas", "shortName": "HUL" }
+    ]
+  }
