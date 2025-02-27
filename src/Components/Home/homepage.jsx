@@ -1,33 +1,75 @@
 import teams from "../../Data/database.json";
-import trackData from "../../Data/trackdb.json";
+import Group49 from "../../../public/Tracks/Group 49.svg";
+import mainlogo from "../../../public/Tracks/mainlogo.svg";
 import { FaGithub, FaInstagram, FaLinkedin, FaDiscord } from "react-icons/fa";
+import { useState,useEffect } from "react";
+
 const HomePage = () => {
+  const [lap, setLap] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setLap((prevLap) => {
+        if (prevLap < 52) {
+          return prevLap + 1;
+        } else {
+          clearInterval(interval);
+          return prevLap;
+        }
+      });
+    }, 1000);
+
+    return () => clearInterval(interval);
+  }, []);
   return (
     <div className="flex justify-between flex-col mt-6 mx-10">
       <div className="flex flex-row p-0 m-0 w-full h-full">
-        <div className="h-fit w-1/6 border-l-4 border-text">
+        <div className="h-fit w-1/6">
+          <div
+            style={{ fontFamily: "wide" }}
+            className="flex items-center justify-between h-12 space-x-2"
+          >
+            <img src={mainlogo} alt="mainlogo" className="h-full w-auto" />
+            <span className="text-text text-2xl tracking-wide">
+              RACE
+            </span>
+          </div>
+          {/* Lap Counter */}
+          <div  className="flex items-center justify-between h-16 ">
+            <span  style={{ fontFamily: "reg" }} className="text-text text-3xl">LAP</span>
+            <span  style={{ fontFamily: "bold" }} className="text-text text-3xl tracking-wider">
+              <span className="text-text">{lap}</span>/
+              <span className="text-stone-500">52</span>
+            </span>
+          </div>
           {teams.teams.map((team) => (
             <div
               key={team.number}
-              className="flex items-center justify-between bg-text text-cream w-full h-[50px]"
+              className="flex items-center justify-between bg-text text-cream py-1.5 w-full h-[42px]"
             >
               <div
-                style={{ fontFamily: "bold", borderColor: team.color }}
-                className={`flex h-full items-center w-1/5 justify-center  text-sm border-r-4`}
+                style={{ fontFamily: "bold" }}
+                className={`flex h-full items-center w-1/6 justify-center text-sm border-r-3 border-stone-500`}
               >
                 {team.number}
               </div>
               <div
-                style={{ fontFamily: "reg" }}
-                className="flex items-center w-3/5 justify-center h-full text-xs"
+                style={{ fontFamily: "bold" }}
+                className="flex items-center w-2/6 justify-center text-sm tracking-wider"
               >
-                {team.name}
+                {team.shortName}
               </div>
               <div
                 style={{ fontFamily: "reg" }}
-                className="flex items-center w-1/5 justify-center text-xs"
+                className="flex items-center w-2/6 justify-center text-sm tracking-widest"
               >
-                {team.shortName}
+                {team.time}
+              </div>
+              <div
+                style={{ fontFamily: "bold", color: team.color }}
+                className="flex items-center w-1/6 justify-center h-full text-lg"
+              >
+                {team.wheel}
               </div>
             </div>
           ))}
@@ -38,7 +80,7 @@ const HomePage = () => {
               style={{ fontFamily: "reg" }}
               className="text-3xl  leading-normal text-justify pr-4"
             >
-              Welcome to Crimson Grid, your ultimate destination for
+              Welcome to Grand Prix Exprience, your ultimate destination for
               comprehensive Formula One information. Stay updated with live
               standings, driver stats, race qualifications, car performance
               details, and the complete race schedule. Dive deep into the world
@@ -52,67 +94,44 @@ const HomePage = () => {
               Formula One
             </div>
           </div>
-          <div className="w-full h-1/3 bg-text rounded-3xl mt-10 justify-center flex-row flex items-center text-cream overflow-hidden">
-            <div className="marquee flex w-auto h-full items-center justify-between">
-              {[...trackData.trackData, ...trackData.trackData].map(
-                (track, index) => (
-                  <div
-                    key={index}
-                    className="w-[160px] h-full items-center flex flex-col justify-between py-4 mx-4"
-                  >
-                    <img
-                      src={track.svg_path}
-                      alt={track.track_name}
-                      className="h-2/3 flex w-full justify-center"
-                    />
-                    <h3
-                      className="h-1/2 text-center text-xs tracking-wide flex items-center"
-                      style={{ fontFamily: "reg" }}
-                    >
-                      {track.track_name}
-                    </h3>
-                    <p
-                      style={{ fontFamily: "bold" }}
-                      className="h-1/5 flex text-sm tracking-widest items-center"
-                    >
-                      {track.country}
-                    </p>
-                  </div>
-                )
-              )}
+          <div className="w-full h-1/3  rounded-3xl mt-6 shadow-xl shadow-stone-400 flex justify-end bg-cream overflow-hidden">
+            <div className="marquee flex flex-row space-x-90 w-auto h-full p-4 loop-scroll">
+              <img src={Group49} alt="Group 49" className="h-full w-auto" />
+              <img src={Group49} alt="Group 49" className="h-full w-auto" />
             </div>
           </div>
-          <style jsx>{`
-            .marquee {
-              animation: marquee 20s linear infinite;
-            }
-
-            @keyframes marquee {
-              0% {
-                transform: translateX(0);
-              }
-              100% {
-                transform: translateX(10%);
-              }
-            }
-          `}</style>
         </div>
       </div>
       <div>
         <div className=" my-8 w-full h-56 flex flex-row justify-between ">
           {/* About Me Section */}
           <div className="w-3/4 justify-center items-center">
-            <h2 style={{ fontFamily: "bold" }} className="text-4xl tracking-wider text-text w-full  text-center">About Me</h2>
-            <p style={{ fontFamily: "reg" }} className="text-text leading-normal text-justify text-2xl mt-6">
+            <h2
+              style={{ fontFamily: "bold" }}
+              className="text-4xl tracking-wider text-text w-full  text-center"
+            >
+              About Me
+            </h2>
+            <p
+              style={{ fontFamily: "reg" }}
+              className="text-text leading-normal text-justify text-2xl mt-6"
+            >
               I'm a passionate front-end developer, designer, and long-time
               Formula One enthusiast. I've built this platform to bring the
               thrill of F1 to life. At Crimson Grid, my goal is to provide fans
-              with a seamless hub for all things Formula One. Here you can find your detailed information about basically anything that you have in mind.
+              with a seamless hub for all things Formula One. Here you can find
+              your detailed information about basically anything that you have
+              in mind.
             </p>
           </div>
           {/* Contact Me Section */}
           <div className="w-1/4 ml-12 border-b-4 border-r-4 border-text rounded-br-3xl">
-            <h2 style={{ fontFamily: "bold" }} className="text-4xl tracking-wider text-text w-full text-center">Contact Me</h2>
+            <h2
+              style={{ fontFamily: "bold" }}
+              className="text-4xl tracking-wider text-text w-full text-center"
+            >
+              Contact Me
+            </h2>
             <div className="flex h-1/2 justify-between px-16 w-full items-center mt-6 text-red-600">
               <a
                 href="https://github.com/yourprofile"
