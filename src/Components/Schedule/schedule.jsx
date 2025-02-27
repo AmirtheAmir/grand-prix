@@ -66,7 +66,7 @@ const Schedule = () => {
           <div className="  flex items-center justify-center w-full h-full">
             <div
               style={{ fontFamily: "bold" }}
-              className="text-[300px] text-text leading-0 text-center font-bold transform -rotate-90 whitespace-nowrap"
+              className="text-[300px] text-text leading-0 text-center transition-all duration-300 font-bold transform -rotate-90 whitespace-nowrap"
             >
               {year}
             </div>

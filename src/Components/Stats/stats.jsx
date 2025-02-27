@@ -44,38 +44,60 @@ const Stats = ({ percentage = 75 }) => {
   };
 
   const getSpeedBasedStyles = (speed) => {
-    if (speed >= 190 && speed <= 194) {
+    if (speed >= 130 && speed <= 170) {
       return {
-        line: { x1: 58, y1: 49, x2: 30, y2: 25 },
-        pathStroke: "#fffe3a",
+        line: { x1: 58, y1: 49, x2: 20, y2: 55 },
+        pathStroke: "#95e214",
       };
-    } else if (speed >= 140 && speed <= 189) {
+    } else if (speed >= 171 && speed <= 189) {
       return {
         line: { x1: 58, y1: 49, x2: 45, y2: 15 },
-        pathStroke: "#80b918",
+        pathStroke: "#fff23e",
       };
-    } else if (speed >= 195 && speed <= 199) {
+    } else if (speed >= 190 && speed <= 205) {
       return {
-        line: { x1: 58, y1: 49, x2: 45, y2: 15 },
-        pathStroke: "#fdcb11",
+        line: { x1: 58, y1: 49, x2: 25, y2: 30 },
+        pathStroke: "#ffd12f",
       };
-    } else if (speed >= 200 && speed <= 205) {
+    } else if (speed >= 206 && speed <= 210) {
+      return {
+        line: { x1: 58, y1: 49, x2: 35, y2: 15 },
+        pathStroke: "#ffab3b",
+      };
+    } else if (speed >= 211 && speed <= 215) {
       return {
         line: { x1: 58, y1: 49, x2: 75, y2: 20 },
-        pathStroke: "#f4781e",
+        pathStroke: "#f00000"
       };
-    } else if (speed >= 205 && speed <= 210) {
+    } else if (speed >= 216 && speed <= 250) {
       return {
-        line: { x1: 58, y1: 49, x2: 75, y2: 20 },
-        pathStroke: "#af2916",
+        line: { x1: 58, y1: 49, x2: 80, y2: 25 },
+        pathStroke: "#8c0000",
       };
     } else {
       return {
-        line: { x1: 58, y1: 49, x2: 75, y2: 20 },
-        pathStroke: "#630304",
+        line: { x1: 58, y1: 49, x2: 55, y2: 15 },
+        pathStroke: "#f06543",
       };
     }
   };
+
+  const sortByFastestLap = () => {
+    if (!raceData) {
+      alert("Please generate results first before sorting.");
+      return;
+    }
+  
+    const sortedResults = [...raceData.Results].sort((a, b) => {
+      return a.FastestLap.rank - b.FastestLap.rank;
+    });
+  
+    setRaceData({
+      ...raceData,
+      Results: sortedResults,
+    });
+  };
+
   return (
     <div className="flex flex-col mt-6 mx-10 items-center">
       <div className="w-3/4 flex items-center flex-col h-96  justify-between">
@@ -86,13 +108,14 @@ const Stats = ({ percentage = 75 }) => {
           This section is all about the information regarding the drivers in
           only and only qualifying rounds you can search by only year or if you
           are willing to go a little bit deeper, you can search by year and
-          rounds.
+          rounds. When pressed on the fastest button it will sort the results for you from top to bottom based on the fastest lap that was taken whether in that year or in that round.
         </p>
         <div className="flex flex-wrap w-full justify-between h-20 mt-4 items-center mb-10">
           <input
             style={{ fontFamily: "bold" }}
             className="border-2 border-text rounded-full text-lg flex text-center w-1/4 h-full text-text outline-none focus:border-crimson focus:border-4"
             placeholder="Year"
+            onKeyDown={handleKeyPress}
             value={year}
             onChange={(e) => setYear(e.target.value)}
           />
@@ -100,6 +123,7 @@ const Stats = ({ percentage = 75 }) => {
             style={{ fontFamily: "bold" }}
             className="border-2 border-text tracking-wide rounded-full text-lg text-center w-1/4 text-text h-full outline-none focus:border-crimson focus:border-4"
             placeholder="Round"
+            onKeyDown={handleKeyPress}
             value={round}
             onChange={(e) => setRound(e.target.value)}
           />
@@ -113,7 +137,7 @@ const Stats = ({ percentage = 75 }) => {
           </button>
           <button
             style={{ fontFamily: "bold" }}
-            className="bg-text text-cream text-center w-1/5 h-full border-3 border-text rounded-full duration-300 hover:bg-cream tracking-widest hover:text-text text-lg"
+            className="bg-text text-cream text-center w-1/5 h-full border-3 border-text rounded-full duration-300 hover:bg-cream tracking-widest hover:text-text text-lg" onClick={sortByFastestLap}
           >
             Fastest
           </button>
